@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using ApiMediaTypeVersioning.Helpers;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ApiMediaTypeVersioning.Controllers
+namespace ApiMediaTypeVersioning.Controllers.V1
 {
+    [RequestHeaderMatchesMediaType("Accept", new []{"application/json;v=1.0"})]
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
